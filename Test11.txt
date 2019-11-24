@@ -1,0 +1,5 @@
+int f() {
+	Class A{
+		string lastName;
+		string firstName; }
+}
