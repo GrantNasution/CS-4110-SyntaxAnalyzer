@@ -1,2 +1,0 @@
-//in function
-for ( ; ; ) x = 1;
