@@ -43,6 +43,7 @@ non terminal DeclPlus, Decl, VariableDecl, Variable, Type, FunctionDecl, Formals
 non terminal IdPlus, FieldPlus, Field, InterfaceDecl, Prototype, PrototypePlus, StmtBlock, VariableDeclPlus;
 non terminal StmtPlus, Stmt, IfStmt, WhileStmt, ForStmt, BreakStmt, ReturnStmt, PrintStmt, ExprPlus;
 non terminal Expr, LValue, Call, Actuals, Constant;
+non terminal CreateId;
 
 /* Precedences */
 precedence left EQUAL;
@@ -75,7 +76,7 @@ Type            ::= INT                         {: System.out.println("[reduce 1
                 | BOOL                          {: System.out.println("[reduce 12]");:}
                 | STRING                        {: System.out.println("[reduce 13]");:}
                 | Type LBRACKET RBRACKET ID     {: System.out.println("[reduce 14]");:}
-                | ID                            {: System.out.println("[reduce 15]");:}
+                | CreateID                      {: System.out.println("[reduce 15]");:}
                 ;
 FunctionDecl    ::= Type ID LPAREN Formals RPAREN StmtBlock     {: System.out.println("[reduce 16]");:}
                 | Type ID LPAREN RPAREN                         {: System.out.println("[reduce 17]");:}
@@ -180,7 +181,7 @@ Expr            ::= LValue EQUAL Expr                           {: System.out.pr
                 | NEW LPAREN ID RPAREN                          {: System.out.println("[reduce 96]");:}
                 | NEWARR LPAREN INTCONST COMMA Type RPAREN      {: System.out.println("[reduce 97]");:}
                 ;
-LValue          ::= ID                              {: System.out.println("[reduce 98]");:}
+LValue          ::= CreateId                        {: System.out.println("[reduce 98]");:}
                 | LValue LBRACKET Expr RBRACKET     {: System.out.println("[reduce 99]");:}
                 | LValue PERIOD ID                  {: System.out.println("[reduce 100]");:}
                 ;
@@ -197,3 +198,5 @@ Constant        ::= INTCONST        {: System.out.println("[reduce 106]");:}
                 | BOOLCONST         {: System.out.println("[reduce 109]");:}
                 | NULL              {: System.out.println("[reduce 110]");:}
                 ;             
+CreateId        ::= ID              {: System.out.prinln("[reduce 111");:}
+                ;
