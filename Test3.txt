@@ -1,2 +1,0 @@
-// in function
-result =  5.times(4);
