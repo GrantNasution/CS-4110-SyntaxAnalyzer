@@ -58,7 +58,7 @@ precedence right NOT;
 precedence left LBRACE, PERIOD; 
 
 /* The grammar rules */
-Program         ::= DeclPlus    {: System.out.println("[reduce 0]");:}
+Program         ::= DeclPlus    {: System.out.println("[reduce 1]");:}
                 ;
 DeclPlus        ::= DeclPlus Decl    {: System.out.println("[reduce 2]");:}
                 | Decl                  {: System.out.println("[reduce 3]");:}
@@ -71,141 +71,140 @@ Decl            ::= VariableDecl    {: System.out.println("[reduce 4]");:}
 VariableDecl    ::= Variable SEMICOLON    {: System.out.println("[reduce 8]");:}
                 ;
 Variable        ::= Type ID     {: System.out.println("[reduce 9]");:}
-                | ID ID
+                | ID ID			{: System.out.println("[reduce 10]");:}
                 ;
-Type            ::= INT                         {: System.out.println("[reduce 10]");:}
-                | DOUBLE                        {: System.out.println("[reduce 11]");:}
-                | BOOL                          {: System.out.println("[reduce 12]");:}
-                | STRING                        {: System.out.println("[reduce 13]");:}
-                | Type LBRACKET RBRACKET        {: System.out.println("[reduce 14]");:}
-                | Arr RBRACKET                {: System.out.println("[reduce 15]");:}
+Type            ::= INT                         {: System.out.println("[reduce 11");:}
+                | DOUBLE                        {: System.out.println("[reduce 12]");:}
+                | BOOL                          {: System.out.println("[reduce 13]");:}
+                | STRING                        {: System.out.println("[reduce 14]");:}
+                | Type LBRACKET RBRACKET        {: System.out.println("[reduce 15]");:}
+                | Arr RBRACKET                	{: System.out.println("[reduce 16]");:}
                 ;
-Arr             ::= ID LBRACKET
+Arr             ::= ID LBRACKET					{: System.out.println("[reduce 17]");:}
                 ;
-FunctionDecl    ::= Type ID LPAREN Formals RPAREN StmtBlock     {: System.out.println("[reduce 16]");:}
-                | ID ID LPAREN Formals
-                | Type ID LPAREN RPAREN                         {: System.out.println("[reduce 17]");:}
-                | ID ID LPAREN RPAREN
-                | VOID ID LPAREN Formals RPAREN StmtBlock       {: System.out.println("[reduce 18]");:}
-                | VOID ID LPAREN RPAREN StmtBlock               {: System.out.println("[reduce 19]");:}
+FunctionDecl    ::= Type ID LPAREN Formals RPAREN StmtBlock     {: System.out.println("[reduce 18]");:}
+                | ID ID LPAREN Formals							{: System.out.println("[reduce 19]");:}
+                | Type ID LPAREN RPAREN                         {: System.out.println("[reduce 20]");:}
+                | ID ID LPAREN RPAREN							{: System.out.println("[reduce 21]");:}
+                | VOID ID LPAREN Formals RPAREN StmtBlock       {: System.out.println("[reduce 22]");:}
+                | VOID ID LPAREN RPAREN StmtBlock               {: System.out.println("[reduce 23]");:}
                 ;
-Formals         ::= Variable                    {: System.out.println("[reduce 20]");:}
-                | Variable COMMA Formals        {: System.out.println("[reduce 21]");:}
+Formals         ::= Variable                    {: System.out.println("[reduce 24]");:}
+                | Variable COMMA Formals        {: System.out.println("[reduce 25]");:}
                 ;
-ClassDecl       ::= CLASS ID EXTENDS ID  IMPLEMENTS IdPlus LBRACE FieldPlus RBRACE      {: System.out.println("[reduce 22]");:}
-                | CLASS ID EXTENDS ID IMPLEMENTS IdPlus LBRACE RBRACE                   {: System.out.println("[reduce 23]");:}
-                | CLASS ID EXTENDS ID LBRACE FieldPlus                                  {: System.out.println("[reduce 24]");:}
-                | CLASS ID EXTENDS ID LBRACE RBRACE                                     {: System.out.println("[reduce 25]");:}
-                | CLASS ID IMPLEMENTS IdPlus LBRACE FieldPlus RBRACE                    {: System.out.println("[reduce 26]");:}
-                | CLASS ID IMPLEMENTS IdPlus LBRACE RBRACE                              {: System.out.println("[reduce 27]");:}
-                | CLASS ID LBRACE FieldPlus RBRACE                                      {: System.out.println("[reduce 28]");:}
-                | CLASS ID LBRACE RBRACE                                                {: System.out.println("[reduce 29]");:}
+ClassDecl       ::= CLASS ID EXTENDS ID  IMPLEMENTS IdPlus LBRACE FieldPlus RBRACE      {: System.out.println("[reduce 26]");:}
+                | CLASS ID EXTENDS ID IMPLEMENTS IdPlus LBRACE RBRACE                   {: System.out.println("[reduce 27]");:}
+                | CLASS ID EXTENDS ID LBRACE FieldPlus                                  {: System.out.println("[reduce 28]");:}
+                | CLASS ID EXTENDS ID LBRACE RBRACE                                     {: System.out.println("[reduce 29]");:}
+                | CLASS ID IMPLEMENTS IdPlus LBRACE FieldPlus RBRACE                    {: System.out.println("[reduce 30]");:}
+                | CLASS ID IMPLEMENTS IdPlus LBRACE RBRACE                              {: System.out.println("[reduce 31]");:}
+                | CLASS ID LBRACE FieldPlus RBRACE                                      {: System.out.println("[reduce 32]");:}
+                | CLASS ID LBRACE RBRACE                                                {: System.out.println("[reduce 33]");:}
                 ;
-IdPlus          ::= IdPlus COMMA ID     {: System.out.println("[reduce 30]");:}
-                | ID                    {: System.out.println("[reduce 31]");:}
+IdPlus          ::= IdPlus COMMA ID     {: System.out.println("[reduce 34]");:}
+                | ID                    {: System.out.println("[reduce 35]");:}
                 ;
-FieldPlus       ::= FieldPlus Field     {: System.out.println("[reduce 32]");:}
-                | Field                 {: System.out.println("[reduce 33]");:}
+FieldPlus       ::= FieldPlus Field     {: System.out.println("[reduce 36]");:}
+                | Field                 {: System.out.println("[reduce 37]");:}
                 ;
-Field           ::= VariableDecl        {: System.out.println("[reduce 34]");:}
-                | FunctionDecl              {: System.out.println("[reduce 35]");:}
+Field           ::= VariableDecl        {: System.out.println("[reduce 38]");:}
+                | FunctionDecl          {: System.out.println("[reduce 39]");:}
                 ;
-InterfaceDecl   ::= INTERFACE ID LBRACE PrototypePlus RBRACE        {: System.out.println("[reduce 36]");:}
-                | INTERFACE ID LBRACE RBRACE                        {: System.out.println("[reduce 37]");:}
+InterfaceDecl   ::= INTERFACE ID LBRACE PrototypePlus RBRACE        {: System.out.println("[reduce 40]");:}
+                | INTERFACE ID LBRACE RBRACE                        {: System.out.println("[reduce 41]");:}
                 ;
-PrototypePlus   ::= PrototypePlus Prototype     {: System.out.println("[reduce 38]");:}
-                | Prototype                     {: System.out.println("[reduce 39]");:}
+PrototypePlus   ::= PrototypePlus Prototype     {: System.out.println("[reduce 42]");:}
+                | Prototype                     {: System.out.println("[reduce 43]");:}
                 ;
-Prototype       ::= Type ID LPAREN Formals RPAREN SEMICOLON     {: System.out.println("[reduce 40]");:} 
-                | ID ID LPAREN Formals RPAREN SEMICOLON             
-                | Type ID LPAREN RPAREN SEMICOLON               {: System.out.println("[reduce 41]");:}
-                | ID ID LPAREN RPAREN SEMICOLON
-                | VOID ID LPAREN Formals RPAREN SEMICOLON       {: System.out.println("[reduce 42]");:}
-                | VOID ID LPAREN RPAREN SEMICOLON               {: System.out.println("[reduce 43]");:}
+Prototype       ::= Type ID LPAREN Formals RPAREN SEMICOLON     {: System.out.println("[reduce 44]");:} 
+                | ID ID LPAREN Formals RPAREN SEMICOLON         {: System.out.println("[reduce 45]");:}
+                | Type ID LPAREN RPAREN SEMICOLON               {: System.out.println("[reduce 46]");:}
+                | ID ID LPAREN RPAREN SEMICOLON					{: System.out.println("[reduce 47]");:}
+                | VOID ID LPAREN Formals RPAREN SEMICOLON       {: System.out.println("[reduce 48]");:}
+                | VOID ID LPAREN RPAREN SEMICOLON               {: System.out.println("[reduce 49]");:}
                 ;   
-StmtBlock       ::= LBRACE VariableDeclPlus StmtPlus RBRACE     {: System.out.println("[reduce 44]");:}                
-                | LBRACE VariableDeclPlus RBRACE                {: System.out.println("[reduce 45]");:}
-                | LBRACE StmtPlus RBRACE                        {: System.out.println("[reduce 46]");:}
-                | LBRACE RBRACE                                 {: System.out.println("[reduce 47]");:}
+StmtBlock       ::= LBRACE VariableDeclPlus StmtPlus RBRACE     {: System.out.println("[reduce 50]");:}                
+                | LBRACE VariableDeclPlus RBRACE                {: System.out.println("[reduce 51]");:}
+                | LBRACE StmtPlus RBRACE                        {: System.out.println("[reduce 52]");:}
+                | LBRACE RBRACE                                 {: System.out.println("[reduce 53]");:}
                 ;
-VariableDeclPlus ::= VariableDeclPlus VariableDecl              {: System.out.println("[reduce 48]");:}
-                | VariableDecl                                  {: System.out.println("[reduce 49]");:}
+VariableDeclPlus ::= VariableDeclPlus VariableDecl              {: System.out.println("[reduce 54]");:}
+                | VariableDecl                                  {: System.out.println("[reduce 55]");:}
                 ;
-StmtPlus        ::= StmtPlus Stmt                               {: System.out.println("[reduce 50]");:}
-                | Stmt                                          {: System.out.println("[reduce 51]");:}
+StmtPlus        ::= StmtPlus Stmt                               {: System.out.println("[reduce 56]");:}
+                | Stmt                                          {: System.out.println("[reduce 57]");:}
                 ;
-Stmt            ::= Expr SEMICOLON      {: System.out.println("[reduce 52]");:}
-                | SEMICOLON             {: System.out.println("[reduce 53]");:}
-                | IfStmt                {: System.out.println("[reduce 54]");:}
-                | WhileStmt             {: System.out.println("[reduce 55]");:}
-                | ForStmt               {: System.out.println("[reduce 56]");:}
-                | BreakStmt             {: System.out.println("[reduce 57]");:}
-                | ReturnStmt            {: System.out.println("[reduce 58]");:}
-                | PrintStmt             {: System.out.println("[reduce 59]");:}
-                | StmtBlock             {: System.out.println("[reduce 60]");:}
+Stmt            ::= Expr SEMICOLON      {: System.out.println("[reduce 58]");:}
+                | SEMICOLON             {: System.out.println("[reduce 59]");:}
+                | IfStmt                {: System.out.println("[reduce 60]");:}
+                | WhileStmt             {: System.out.println("[reduce 61]");:}
+                | ForStmt               {: System.out.println("[reduce 62]");:}
+                | BreakStmt             {: System.out.println("[reduce 63]");:}
+                | ReturnStmt            {: System.out.println("[reduce 64]");:}
+                | PrintStmt             {: System.out.println("[reduce 65]");:}
+                | StmtBlock             {: System.out.println("[reduce 66]");:}
                 ;        
-IfStmt          ::= IF LPAREN Expr RPAREN Stmt ELSE Stmt        {: System.out.println("[reduce 61]");:}
-                | IF LPAREN Expr RPAREN Stmt                    {: System.out.println("[reduce 62]");:}
+IfStmt          ::= IF LPAREN Expr RPAREN Stmt ELSE Stmt        {: System.out.println("[reduce 67]");:}
+                | IF LPAREN Expr RPAREN Stmt                    {: System.out.println("[reduce 68]");:}
                 ;
-WhileStmt       ::= WHILE LPAREN Expr RPAREN Stmt       {: System.out.println("[reduce 63]");:}
+WhileStmt       ::= WHILE LPAREN Expr RPAREN Stmt       {: System.out.println("[reduce 69]");:}
                 ;   
-ForStmt         ::= FOR LPAREN Expr SEMICOLON Expr SEMICOLON Expr RPAREN Stmt       {: System.out.println("[reduce 64]");:}
-                | FOR LPAREN Expr SEMICOLON Expr SEMICOLON RPAREN Stmt              {: System.out.println("[reduce 65]");:}
-                | FOR LPAREN SEMICOLON Expr SEMICOLON Expr RPAREN Stmt              {: System.out.println("[reduce 66]");:}
-                | FOR LPAREN SEMICOLON Expr SEMICOLON RPAREN Stmt                   {: System.out.println("[reduce 67]");:}
+ForStmt         ::= FOR LPAREN Expr SEMICOLON Expr SEMICOLON Expr RPAREN Stmt       {: System.out.println("[reduce 70]");:}
+                | FOR LPAREN Expr SEMICOLON Expr SEMICOLON RPAREN Stmt              {: System.out.println("[reduce 71]");:}
+                | FOR LPAREN SEMICOLON Expr SEMICOLON Expr RPAREN Stmt              {: System.out.println("[reduce 72]");:}
+                | FOR LPAREN SEMICOLON Expr SEMICOLON RPAREN Stmt                   {: System.out.println("[reduce 73]");:}
                 ;
-BreakStmt       ::= BREAK SEMICOLON     {: System.out.println("[reduce 68]");:}
+BreakStmt       ::= BREAK SEMICOLON     {: System.out.println("[reduce 74]");:}
                 ;
-ReturnStmt      ::= RETURN Expr SEMICOLON       {: System.out.println("[reduce 69]");:} 
-                | RETURN SEMICOLON              {: System.out.println("[reduce 70]");:}
+ReturnStmt      ::= RETURN Expr SEMICOLON       {: System.out.println("[reduce 75]");:} 
+                | RETURN SEMICOLON              {: System.out.println("[reduce 76]");:}
                 ;
-PrintStmt       ::= PRINTLN LPAREN ExprPlus RPAREN SEMICOLON        {: System.out.println("[reduce 71]");:}
+PrintStmt       ::= PRINTLN LPAREN ExprPlus RPAREN SEMICOLON        {: System.out.println("[reduce 77]");:}
                 ;
-ExprPlus        ::= Expr COMMA ExprPlus         {: System.out.println("[reduce 72]");:}
-                | Expr                          {: System.out.println("[reduce 73]");:}
+ExprPlus        ::= Expr COMMA ExprPlus         {: System.out.println("[reduce 78]");:}
+                | Expr                          {: System.out.println("[reduce 79]");:}
                 ;
-Expr            ::= LValue EQUAL Expr                           {: System.out.println("[reduce 74]");:}
-                | Constant                                      {: System.out.println("[reduce 75]");:}
-                | LValue                                        {: System.out.println("[reduce 76]");:}
-                | ID
-                | THIS                                          {: System.out.println("[reduce 77]");:}
-                | Call                                          {: System.out.println("[reduce 78]");:}
-                | LPAREN Expr RPAREN                            {: System.out.println("[reduce 79]");:}
-                | Expr PLUS Expr                                {: System.out.println("[reduce 80]");:}
-                | Expr MINUS Expr                               {: System.out.println("[reduce 81]");:}
-                | Expr MUL Expr                                 {: System.out.println("[reduce 82]");:}
-                | Expr DIV Expr                                 {: System.out.println("[reduce 83]");:}
-                | Expr MOD Expr                                 {: System.out.println("[reduce 84]");:}
-                | MINUS Expr                                    {: System.out.println("[reduce 85]");:}
-                | Expr LT Expr                                  {: System.out.println("[reduce 86]");:}
-                | Expr LTEQ Expr                                {: System.out.println("[reduce 87]");:}
-                | Expr GT Expr                                  {: System.out.println("[reduce 88]");:}                  
-                | Expr GTEQ Expr                                {: System.out.println("[reduce 89]");:}
-        
-                | Expr DNE Expr                                 {: System.out.println("[reduce 91]");:}
-                | Expr AND Expr                                 {: System.out.println("[reduce 92]");:}
-                | Expr OR Expr                                  {: System.out.println("[reduce 93]");:}
-                | NOT Expr                                      {: System.out.println("[reduce 94]");:}
-                | READLN LPAREN RPAREN                          {: System.out.println("[reduce 95]");:}
-                | NEW LPAREN ID RPAREN                          {: System.out.println("[reduce 96]");:}
-                | NEWARR LPAREN INTCONST COMMA Type RPAREN      {: System.out.println("[reduce 97]");:}
-                | NEWARR LPAREN INTCONST COMMA ID RPAREN
+Expr            ::= LValue EQUAL Expr                           {: System.out.println("[reduce 80]");:}
+                | Constant                                      {: System.out.println("[reduce 81]");:}
+                | LValue                                        {: System.out.println("[reduce 82]");:}
+                | ID											{: System.out.println("[reduce 83]");:}
+                | THIS                                          {: System.out.println("[reduce 84]");:}
+                | Call                                          {: System.out.println("[reduce 85]");:}
+                | LPAREN Expr RPAREN                            {: System.out.println("[reduce 86]");:}
+                | Expr PLUS Expr                                {: System.out.println("[reduce 87]");:}
+                | Expr MINUS Expr                               {: System.out.println("[reduce 88]");:}
+                | Expr MUL Expr                                 {: System.out.println("[reduce 89]");:}
+                | Expr DIV Expr                                 {: System.out.println("[reduce 90]");:}
+                | Expr MOD Expr                                 {: System.out.println("[reduce 91]");:}
+                | MINUS Expr                                    {: System.out.println("[reduce 92]");:}
+                | Expr LT Expr                                  {: System.out.println("[reduce 93]");:}
+                | Expr LTEQ Expr                                {: System.out.println("[reduce 94]");:}
+                | Expr GT Expr                                  {: System.out.println("[reduce 95]");:}                  
+                | Expr GTEQ Expr                                {: System.out.println("[reduce 96]");:}
+                | Expr DNE Expr                                 {: System.out.println("[reduce 97]");:}
+                | Expr AND Expr                                 {: System.out.println("[reduce 98]");:}
+                | Expr OR Expr                                  {: System.out.println("[reduce 99]");:}
+                | NOT Expr                                      {: System.out.println("[reduce 100]");:}
+                | READLN LPAREN RPAREN                          {: System.out.println("[reduce 101]");:}
+                | NEW LPAREN ID RPAREN                          {: System.out.println("[reduce 102]");:}
+                | NEWARR LPAREN INTCONST COMMA Type RPAREN      {: System.out.println("[reduce 103]");:}
+                | NEWARR LPAREN INTCONST COMMA ID RPAREN		{: System.out.println("[reduce 104]");:}
                 ;
-LValue          ::= LValue LBRACKET Expr RBRACKET       {: System.out.println("[reduce 99]");:}
-                | LValue PERIOD ID                      {: System.out.println("[reduce 100]");:}
-                | ID PERIOD ID
-                | Arr Expr RBRACKET
+LValue          ::= LValue LBRACKET Expr RBRACKET       {: System.out.println("[reduce 105]");:}
+                | LValue PERIOD ID                      {: System.out.println("[reduce 106]");:}
+                | ID PERIOD ID							{: System.out.println("[reduce 107]");:}
+                | Arr Expr RBRACKET						{: System.out.println("[reduce 108]");:}
                 ;
-Call            ::= ID LPAREN Actuals RPAREN                {: System.out.println("[reduce 101]");:}
-                | ID LPAREN RPAREN                          {: System.out.println("[reduce 102]");:}
-                | ID PERIOD ID LPAREN Actuals RPAREN        {: System.out.println("[reduce 103]");:}
-                | ID PERIOD ID LPAREN RPAREN                {: System.out.println("[reduce 104]");:}
+Call            ::= ID LPAREN Actuals RPAREN                {: System.out.println("[reduce 109]");:}
+                | ID LPAREN RPAREN                          {: System.out.println("[reduce 110]");:}
+                | ID PERIOD ID LPAREN Actuals RPAREN        {: System.out.println("[reduce 111]");:}
+                | ID PERIOD ID LPAREN RPAREN                {: System.out.println("[reduce 112]");:}
                 ;
-Actuals         ::= ExprPlus        {: System.out.println("[reduce 105]");:}
+Actuals         ::= ExprPlus        {: System.out.println("[reduce 113]");:}
                 ;
-Constant        ::= INTCONST        {: System.out.println("[reduce 106]");:}
-                | DOUBLECONST       {: System.out.println("[reduce 107]");:}
-                | STRINGCONST       {: System.out.println("[reduce 108]");:}
-                | BOOLCONST         {: System.out.println("[reduce 109]");:}
-                | NULL              {: System.out.println("[reduce 110]");:}
-                ;             
+Constant        ::= INTCONST        {: System.out.println("[reduce 114]");:}
+                | DOUBLECONST       {: System.out.println("[reduce 115]");:}
+                | STRINGCONST       {: System.out.println("[reduce 116]");:}
+                | BOOLCONST         {: System.out.println("[reduce 117]");:}
+                | NULL              {: System.out.println("[reduce 118]");:}
+                ;  
