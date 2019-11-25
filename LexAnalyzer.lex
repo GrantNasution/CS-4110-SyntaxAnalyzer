@@ -21,7 +21,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java_cup.runtime.*;
+/*
 public class LexAnalyzer {
     public static void main(String argv[]) throws java.io.IOException {
 		Reader reader = new FileReader(argv[0]);
@@ -51,6 +52,7 @@ class Yytoken {
     public String getToken() {return token;}
     public String getText() {return text;}
 }
+*/
 
 
 class Utility {
@@ -347,6 +349,8 @@ class Trie {
 }
 
 %%
+%cup
+%line
 %state BLOCK_COMMENT
 %state SINGLE_COMMENT
 
@@ -397,7 +401,7 @@ class Trie {
     public String DNE = "_dne";
     public String AND = "_and";
     public String OR = "_or";
-    public String EXCL = "_excl";
+    public String NOT = "_not";
     public String EQUAL = "_equal";
     public String SEMICOLON = "_semicolon";
     public String COMMA = "_comma";
@@ -417,63 +421,63 @@ WHITE_SPACE_CHAR=[\n\ \t\b\012]
 STRING_CHAR=(\\\"|[^\n\"]|\\{WHITE_SPACE_CHAR}+\\)
 
 %%
-<YYINITIAL> boolean				            {return (new Yytoken(BOOL, yytext()));}
-<YYINITIAL> break                           {return (new Yytoken(BREAK, yytext()));}
-<YYINITIAL> class                           {return (new Yytoken(CLASS, yytext()));}
-<YYINITIAL> double                          {return (new Yytoken(DOUBLE, yytext()));}    
-<YYINITIAL> else                            {return (new Yytoken(ELSE, yytext()));}    
-<YYINITIAL> extends                         {return (new Yytoken(EXTENDS, yytext()));}   
-<YYINITIAL> false                           {return (new Yytoken(FALSE, yytext()));}   
-<YYINITIAL> for                             {return (new Yytoken(FOR, yytext()));}   
-<YYINITIAL> if                              {return (new Yytoken(IF, yytext()));}    
-<YYINITIAL> implements                      {return (new Yytoken(IMPLEMENTS, yytext()));}   
-<YYINITIAL> int                             {return (new Yytoken(INT, yytext()));}   
-<YYINITIAL> interface                       {return (new Yytoken(INTERFACE, yytext()));}   
-<YYINITIAL> new                             {return (new Yytoken(NEW, yytext()));}
-<YYINITIAL> newarray                        {return (new Yytoken(NEWARR, yytext()));}
-<YYINITIAL> println                         {return (new Yytoken(PRINTLN, yytext()));}
-<YYINITIAL> readln                          {return (new Yytoken(READLN, yytext()));}
-<YYINITIAL> return                          {return (new Yytoken(RETURN, yytext()));}
-<YYINITIAL> string                          {return (new Yytoken(STRING, yytext()));}
-<YYINITIAL> this                            {return (new Yytoken(THIS, yytext()));}
-<YYINITIAL> true                            {return (new Yytoken(TRUE, yytext()));}
-<YYINITIAL> void                            {return (new Yytoken(VOID, yytext()));}
-<YYINITIAL> while                           {return (new Yytoken(WHILE, yytext()));}
-<YYINITIAL> \+                              {return (new Yytoken(PLUS, yytext()));}
-<YYINITIAL> -                               {return (new Yytoken(MINUS, yytext()));}
-<YYINITIAL> \*                              {return (new Yytoken(MUL, yytext()));}
-<YYINITIAL> /                               {return (new Yytoken(DIV, yytext()));}
-<YYINITIAL> %                               {return (new Yytoken(MOD, yytext()));}
-<YYINITIAL> <                               {return (new Yytoken(LT, yytext()));}
-<YYINITIAL> <=                              {return (new Yytoken(LTEQ, yytext()));}
-<YYINITIAL> >                               {return (new Yytoken(GT, yytext()));}
-<YYINITIAL> >=                              {return (new Yytoken(GTEQ, yytext()));}
-<YYINITIAL> ==                              {return (new Yytoken(COMP, yytext()));}
-<YYINITIAL> !=                              {return (new Yytoken(DNE, yytext()));}
-<YYINITIAL> &&                              {return (new Yytoken(AND, yytext()));}
-<YYINITIAL> "||"                            {return (new Yytoken(OR, yytext()));}
-<YYINITIAL> !                               {return (new Yytoken(EXCL, yytext()));}
-<YYINITIAL> =                               {return (new Yytoken(EQUAL, yytext()));}
-<YYINITIAL> ;                               {return (new Yytoken(SEMICOLON, yytext()));}
-<YYINITIAL> ,                               {return (new Yytoken(COMMA, yytext()));}
-<YYINITIAL> \.                              {return (new Yytoken(PERIOD, yytext()));}
-<YYINITIAL> \(                              {return (new Yytoken(LPAREN, yytext()));}
-<YYINITIAL> \)                              {return (new Yytoken(RPAREN, yytext()));}
-<YYINITIAL> \[                              {return (new Yytoken(LBRACE, yytext()));}
-<YYINITIAL> \]                              {return (new Yytoken(RBRACE, yytext()));}
-<YYINITIAL> \{                              {return (new Yytoken(LBRACKET, yytext()));}
-<YYINITIAL> \}                              {return (new Yytoken(RBRACKET, yytext()));}
+<YYINITIAL> boolean				            {return (new Symbol(sym.BOOL));}
+<YYINITIAL> break                           {return (new Symbol(sym.BREAK));}
+<YYINITIAL> class                           {return (new Symbol(sym.CLASS));}
+<YYINITIAL> else                            {return (new Symbol(sym.ELSE));}
+<YYINITIAL> double                          {return (new Symbol(sym.DOUBLE));}
+<YYINITIAL> extends                         {return (new Symbol(sym.EXTENDS));}
+<YYINITIAL> false                           {return (new Symbol(sym.FALSE));}
+<YYINITIAL> for                             {return (new Symbol(sym.FOR));}
+<YYINITIAL> if                              {return (new Symbol(sym.IF));}
+<YYINITIAL> implements                      {return (new Symbol(sym.IMPLEMENTS));}
+<YYINITIAL> int                             {return (new Symbol(sym.INT));}
+<YYINITIAL> interface                       {return (new Symbol(sym.INTERFACE));}
+<YYINITIAL> new                             {return (new Symbol(sym.NEW));}
+<YYINITIAL> newarray                        {return (new Symbol(sym.NEWARR));}
+<YYINITIAL> println                         {return (new Symbol(sym.PRINTLN));}
+<YYINITIAL> readln                          {return (new Symbol(sym.READLN));}
+<YYINITIAL> return                          {return (new Symbol(sym.RETURN));}
+<YYINITIAL> string                          {return (new Symbol(sym.STRING));}
+<YYINITIAL> this                            {return (new Symbol(sym.THIS));}
+<YYINITIAL> true                            {return (new Symbol(sym.TRUE));}
+<YYINITIAL> void                            {return (new Symbol(sym.VOID));}
+<YYINITIAL> while                           {return (new Symbol(sym.WHILE));}
+<YYINITIAL> \+                              {return (new Symbol(sym.PLUS));}
+<YYINITIAL> -                               {return (new Symbol(sym.MINUS));}
+<YYINITIAL> \*                              {return (new Symbol(sym.MUL));}
+<YYINITIAL> /                               {return (new Symbol(sym.DIV));}
+<YYINITIAL> %                               {return (new Symbol(sym.MOD));}
+<YYINITIAL> <                               {return (new Symbol(sym.LT));}
+<YYINITIAL> <=                              {return (new Symbol(sym.LTEQ));}
+<YYINITIAL> >                               {return (new Symbol(sym.GT));}
+<YYINITIAL> >=                              {return (new Symbol(sym.GTEQ));}
+<YYINITIAL> ==                              {return (new Symbol(sym.COMP));}
+<YYINITIAL> !=                              {return (new Symbol(sym.DNE));}
+<YYINITIAL> &&                              {return (new Symbol(sym.AND));}
+<YYINITIAL> "||"                            {return (new Symbol(sym.OR));}
+<YYINITIAL> !                               {return (new Symbol(sym.NOT));}
+<YYINITIAL> =                               {return (new Symbol(sym.EQUAL));}
+<YYINITIAL> ;                               {return (new Symbol(sym.SEMICOLON));}
+<YYINITIAL> ,                               {return (new Symbol(sym.COMMA));}
+<YYINITIAL> \.                              {return (new Symbol(sym.PERIOD));}
+<YYINITIAL> \(                              {return (new Symbol(sym.LPAREN));}
+<YYINITIAL> \)                              {return (new Symbol(sym.RPAREN));}
+<YYINITIAL> \[                              {return (new Symbol(sym.LBRACKET));}
+<YYINITIAL> \]                              {return (new Symbol(sym.RBRACKET));}
+<YYINITIAL> \{                              {return (new Symbol(sym.LBRACE));}
+<YYINITIAL> \}                              {return (new Symbol(sym.RBRACE));}
 
-<YYINITIAL> {ALPHA}({ALPHA}|_|{DIGIT})* 	{return (new Yytoken(ID, yytext()));}
-<YYINITIAL> {DIGIT}+"."{DIGIT}*((E|e)("+"|"-")?{DIGIT}+)?  {return (new Yytoken(DOUBLECONST, yytext()));}
-<YYINITIAL> {DIGIT}+ 						{return (new Yytoken(INTCONST, yytext()));}
-<YYINITIAL> (0x|0X){HEX}+ 					{return (new Yytoken(INTCONST, yytext()));}
-<YYINITIAL> \"({STRING_CHAR})*\"            {String str =  yytext().substring(1,yytext().length() - 1);
-                                                Utility.ASSERT(str.length() == yytext().length() - 2);
-                                                return (new Yytoken(STRINGCONST, str));}
+<YYINITIAL> {ALPHA}({ALPHA}|_|{DIGIT})* 	                {return (new Symbol(sym.ID));}
+<YYINITIAL> {DIGIT}+"."{DIGIT}*((E|e)("+"|"-")?{DIGIT}+)?   {return (new Symbol(sym.DOUBLECONST));}
+<YYINITIAL> {DIGIT}+ 						                {return (new Symbol(sym.INTCONST));}
+<YYINITIAL> (0x|0X){HEX}+ 					                {return (new Symbol(sym.INTCONST));}
+<YYINITIAL> \"({STRING_CHAR})*\"                            {String str =  yytext().substring(1,yytext().length() - 1);
+                                                            Utility.ASSERT(str.length() == yytext().length() - 2);
+                                                            return (new Symbol(sym.STRINGCONST));}
 
 <YYINITIAL> {WHITE_SPACE_CHAR}				{;}
-<YYINITIAL> {NL}                            {return (new Yytoken("\n","\n"));}
+<YYINITIAL> {NL}                            {System.out.println();}
 
 <YYINITIAL> /"*"                            {yybegin(BLOCK_COMMENT);}
 <BLOCK_COMMENT> "*"/                        {yybegin(YYINITIAL);}

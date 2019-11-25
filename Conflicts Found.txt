@@ -1,0 +1,24 @@
+Warning : *** Shift/Reduce conflict found in state #191
+  between IfStmt ::= IF LPAREN Expr RPAREN Stmt (*)
+  and     IfStmt ::= IF LPAREN Expr RPAREN Stmt (*) ELSE Stmt
+  under symbol ELSE
+  Resolved in favor of shifting.
+
+FIX: Give ELSE higher precedence
+
+Warning : *** Reduce/Reduce conflict found in state #103
+  between LValue ::= ID (*)
+  and     Type ::= ID (*)
+  under symbols: {LBRACKET}
+  Resolved in favor of the second production.
+
+FIX: Removed ID production for both LValue and Type.
+Then wherever LValue and Type appeared on the rhs of he production add a new production rule replacing LValue or Type with ID
+
+Warning : *** Shift/Reduce conflict found in state #160
+  between Expr ::= Expr COMP Expr (*)
+  and     Expr ::= Expr (*) COMP Expr
+  under symbol COMP
+  Resolved in favor of shifting.
+
+FIX: Not fixed

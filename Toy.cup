@@ -31,11 +31,11 @@ terminal WHILE;
 terminal PLUS, MINUS, MUL, DIV, MOD;
 terminal LT, LTEQ, GT, GTEQ, COMP, DNE, AND, OR, EQUAL, NOT;
 terminal LPAREN, RPAREN, SEMICOLON, COMMA, PERIOD, LBRACE, RBRACE, LBRACKET, RBRACKET;
-terminal Integer    INTCONST;        // our scanner provides numbers as integers
-terminal String     ID;
-terminal Double     DOUBLECONST;
-terminal String     STRINGCONST;
-terminal Boolean    BOOLCONST;
+terminal INTCONST;       
+terminal ID;
+terminal DOUBLECONST;
+terminal STRINGCONST;
+terminal BOOLCONST;
 
 /* Non terminals */
 non terminal Program;
@@ -58,7 +58,7 @@ precedence right NOT;
 precedence left LBRACE, PERIOD; 
 
 /* The grammar rules */
-Program         ::= DeclPlus    {: System.out.println("[reduce 1]");:}
+Program         ::= DeclPlus    {: System.out.println("[reduce 1]\n[Accept]");:}
                 ;
 DeclPlus        ::= DeclPlus Decl    {: System.out.println("[reduce 2]");:}
                 | Decl                  {: System.out.println("[reduce 3]");:}
@@ -73,7 +73,7 @@ VariableDecl    ::= Variable SEMICOLON    {: System.out.println("[reduce 8]");:}
 Variable        ::= Type ID     {: System.out.println("[reduce 9]");:}
                 | ID ID			{: System.out.println("[reduce 10]");:}
                 ;
-Type            ::= INT                         {: System.out.println("[reduce 11");:}
+Type            ::= INT                         {: System.out.println("[reduce 11]");:}
                 | DOUBLE                        {: System.out.println("[reduce 12]");:}
                 | BOOL                          {: System.out.println("[reduce 13]");:}
                 | STRING                        {: System.out.println("[reduce 14]");:}
@@ -83,9 +83,9 @@ Type            ::= INT                         {: System.out.println("[reduce 1
 Arr             ::= ID LBRACKET					{: System.out.println("[reduce 17]");:}
                 ;
 FunctionDecl    ::= Type ID LPAREN Formals RPAREN StmtBlock     {: System.out.println("[reduce 18]");:}
-                | ID ID LPAREN Formals							{: System.out.println("[reduce 19]");:}
-                | Type ID LPAREN RPAREN                         {: System.out.println("[reduce 20]");:}
-                | ID ID LPAREN RPAREN							{: System.out.println("[reduce 21]");:}
+                | ID ID LPAREN Formals RPAREN StmtBlock			{: System.out.println("[reduce 19]");:}
+                | Type ID LPAREN RPAREN StmtBlock               {: System.out.println("[reduce 20]");:}
+                | ID ID LPAREN RPAREN StmtBlock				    {: System.out.println("[reduce 21]");:}
                 | VOID ID LPAREN Formals RPAREN StmtBlock       {: System.out.println("[reduce 22]");:}
                 | VOID ID LPAREN RPAREN StmtBlock               {: System.out.println("[reduce 23]");:}
                 ;
