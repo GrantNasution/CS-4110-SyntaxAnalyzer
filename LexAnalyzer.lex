@@ -421,8 +421,14 @@ WHITE_SPACE_CHAR=[\n\ \t\b\012]
 STRING_CHAR=(\\\"|[^\n\"]|\\{WHITE_SPACE_CHAR}+\\)
 
 %%
-<YYINITIAL> boolean				            {return (new Symbol(sym.BOOL));}
-<YYINITIAL> break                           {return (new Symbol(sym.BREAK));}
+<YYINITIAL> boolean				            {
+                                                System.out.println("b [shift]\n o [shift]\n o [shift]\n l [shift]\n e [shift]\n a [shift]\n n[shift]")
+                                                return (new Symbol(sym.BOOL));
+                                            }
+<YYINITIAL> break                           {
+                                                System.out.println("b [shift]\n r[shift]\n e [shift]\n a [shift]\n k");
+                                                return (new Symbol(sym.BREAK));
+                                            }
 <YYINITIAL> class                           {return (new Symbol(sym.CLASS));}
 <YYINITIAL> else                            {return (new Symbol(sym.ELSE));}
 <YYINITIAL> double                          {return (new Symbol(sym.DOUBLE));}
