@@ -359,6 +359,7 @@ class Trie {
 	public String INTCONST = "_intconst";
     public String DOUBLECONST = "_doubleconst";
     public String STRINGCONST = "_stringconst";
+    public String BOOLCONST = "_booleanconst";
 
     //Keywords and operators
 	public String BOOL = "_boolean";
@@ -441,8 +442,8 @@ STRING_CHAR=(\\\"|[^\n\"]|\\{WHITE_SPACE_CHAR}+\\)
 												System.out.print("\n" + EXTENDS + " [shift]");
 												return (new Symbol(sym.EXTENDS));}
 <YYINITIAL> false                           {
-												System.out.print("\n" + FALSE + " [shift]");
-												return (new Symbol(sym.FALSE));
+												System.out.print("\n" + BOOLCONST + " [shift]");
+												return (new Symbol(sym.BOOLCONST));
 											}
 <YYINITIAL> for                             {	
 												System.out.print("\n" + FOR + " [shift]");
@@ -481,8 +482,8 @@ STRING_CHAR=(\\\"|[^\n\"]|\\{WHITE_SPACE_CHAR}+\\)
 												System.out.print("\n" + THIS + " [shift]");
 												return (new Symbol(sym.THIS));}
 <YYINITIAL> true                            {
-												System.out.print("\n" + TRUE + " [shift]");
-												return (new Symbol(sym.TRUE));}
+												System.out.print("\n" + BOOLCONST + " [shift]");
+												return (new Symbol(sym.BOOLCONST));}
 <YYINITIAL> void                            {
 												System.out.print("\n" + VOID + " [shift]");
 												return (new Symbol(sym.VOID));}

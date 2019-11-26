@@ -1,0 +1,13 @@
+interface Comparable {
+	int compareTo(int x, int y);
+}
+
+class Foo extends bar implements foobar {
+	int Bob;
+	double Alice;
+	void peanut() {
+		if(x != y) x = y;
+		flag = false;
+		z = x % y;
+	}
+}

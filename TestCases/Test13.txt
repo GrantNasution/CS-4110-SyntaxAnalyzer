@@ -18,7 +18,7 @@ class CS4110{
 	double funny;
 	boolean flag;
 	string s;
-	int [] a;
+	int [] a;x
 	flag = true;
 	Funny = 0X89aB;
 	funny = 123456E+7;

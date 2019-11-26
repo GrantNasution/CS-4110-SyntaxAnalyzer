@@ -347,6 +347,7 @@ class Yylex implements java_cup.runtime.Scanner {
 	public String INTCONST = "_intconst";
     public String DOUBLECONST = "_doubleconst";
     public String STRINGCONST = "_stringconst";
+    public String BOOLCONST = "_booleanconst";
     //Keywords and operators
 	public String BOOL = "_boolean";
     public String BREAK = "_break";
@@ -1113,8 +1114,8 @@ class Yylex implements java_cup.runtime.Scanner {
 						break;
 					case 40:
 						{
-												System.out.print("\n" + TRUE + " [shift]");
-												return (new Symbol(sym.TRUE));}
+												System.out.print("\n" + BOOLCONST + " [shift]");
+												return (new Symbol(sym.BOOLCONST));}
 					case -41:
 						break;
 					case 41:
@@ -1145,8 +1146,8 @@ class Yylex implements java_cup.runtime.Scanner {
 						break;
 					case 45:
 						{
-												System.out.print("\n" + FALSE + " [shift]");
-												return (new Symbol(sym.FALSE));
+												System.out.print("\n" + BOOLCONST + " [shift]");
+												return (new Symbol(sym.BOOLCONST));
 											}
 					case -46:
 						break;

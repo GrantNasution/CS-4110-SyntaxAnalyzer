@@ -1,4 +1,4 @@
-class Tickler() {
+class Tickler {
 boolean b;
 userDefinedClassType f(){}
 double d;

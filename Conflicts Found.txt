@@ -21,4 +21,4 @@ Warning : *** Shift/Reduce conflict found in state #160
   under symbol COMP
   Resolved in favor of shifting.
 
-FIX: Not fixed
+FIX: Forgot to add COMP to the precedence list
