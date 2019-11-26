@@ -1,4 +1,5 @@
-//in function
-if (h>w) g = h;
-else h=g;
-doulbe a;
+void func() {
+	if (h>w) g = h;
+	else h=g;
+	double a;
+}

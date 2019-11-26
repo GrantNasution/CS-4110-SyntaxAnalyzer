@@ -1,5 +1,6 @@
-// in class
+class Tickler() {
 boolean b;
 userDefinedClassType f(){}
 double d;
 string g(){}
+}

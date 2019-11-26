@@ -420,155 +420,170 @@ STRING_CHAR=(\\\"|[^\n\"]|\\{WHITE_SPACE_CHAR}+\\)
 
 %%
 <YYINITIAL> boolean				            {
-                                                System.out.println("b [shift]\n o [shift]\n o [shift]\n l [shift]\n e [shift]\n a [shift]\n n[shift]");
+                                                System.out.print("\n" + BOOL + " [shift]");
                                                 return (new Symbol(sym.BOOL));
                                             }
 <YYINITIAL> break                           {
-                                                System.out.println("b [shift]\n r [shift]\n e [shift]\n a [shift]\n k [shift]");
+                                                System.out.print("\n" + BREAK + " [shift]");
                                                 return (new Symbol(sym.BREAK));
                                             }
 <YYINITIAL> class                           {	
-												System.out.println("c [shift]\n l [shift]\n a [shift]\n s [shift]\n s [shift]");	
+												System.out.print("\n" + CLASS +" [shift]");	
 												return (new Symbol(sym.CLASS));
 											}
 <YYINITIAL> else                            {
-												System.out.println("e [shift]\n l [shift]\n s [shift]\n e [shift]");
+												System.out.print("\n" + ELSE + " [shift]");
 												return (new Symbol(sym.ELSE));}
 <YYINITIAL> double                          {
-												System.out.println("d [shift]\n o [shift]\n u [shift]\n b [shift]\n l [shift]\n e[shift]");
+												System.out.print("\n" + DOUBLE + " [shift]");
 												return (new Symbol(sym.DOUBLE));}
 <YYINITIAL> extends                         {
-												System.out.println("e [shift]\n x [shift]\n t [shift]\n e [shift]\n n [shift]\n d [shift]\n s [shift]");
+												System.out.print("\n" + EXTENDS + " [shift]");
 												return (new Symbol(sym.EXTENDS));}
 <YYINITIAL> false                           {
-												System.out.println("f [shift]\n a [shift]\n l [shift]\n s [shift]\n e [shift]");
+												System.out.print("\n" + FALSE + " [shift]");
 												return (new Symbol(sym.FALSE));
 											}
 <YYINITIAL> for                             {	
-												System.out.println("f[shift]\n o[shift]\n r[shift]");
+												System.out.print("\n" + FOR + " [shift]");
 												return (new Symbol(sym.FOR));}
 <YYINITIAL> if                              {
-												System.out.println("i[shift]\n f[shift]");
+												System.out.print("\n" + IF + " [shift]");
 												return (new Symbol(sym.IF));}
 <YYINITIAL> implements                      {
-												System.out.println("i[shift]\n m[shift]\n p[shift]\n l[shift]\n e[shift]\n m[shift]\n e[shift]\n n[shift]\n t[shift]\n s[shift]");
+												System.out.print("\n" + IMPLEMENTS + " [shift]");
 												return (new Symbol(sym.IMPLEMENTS));}
 <YYINITIAL> int                             {
-												System.out.println("i[shift]\n n[shift]\n t[shift]");
+												System.out.print("\n" + INT + " [shift]");
 												return (new Symbol(sym.INT));}
 <YYINITIAL> interface                       {
-												System.out.println("i [shift]\n n [shift]\n t [shift]\n e [shift]\n r [shift]\n f [shift]\n a [shift]\n c [shift]\n e [shift]");					
+												System.out.print("\n" + INTERFACE + " [shift]");					
 												return (new Symbol(sym.INTERFACE));}
 <YYINITIAL> new                             {
-												System.out.println("n [shift]\n e [shift]\n w [shift]");
+												System.out.print("\n" + NEW + " [shift]");
 												return (new Symbol(sym.NEW));}
 <YYINITIAL> newarray                        {
-												System.out.println("n [shift]\n e [shift]\n w [shift]\n a [shift]\n r [shift]\n r [shift]\n a [shift]\n y [shift]");
+												System.out.print("\n" + NEWARR + " [shift]");
 												return (new Symbol(sym.NEWARR));}
 <YYINITIAL> println                         {
-												System.out.println("p [shift]\n r [shift]\n i [shift]\n n [shift]\n t [shift]\n l [shift]\n n [shift]");
+												System.out.print("\n" + PRINTLN + " [shift]");
 												return (new Symbol(sym.PRINTLN));}
 <YYINITIAL> readln                          {
-												System.out.println("r [shift]\n e [shift]\n a [shift]\n d [shift]\n l [shift]\n n [shift]");
+												System.out.print("\n" + READLN + " [shift]");
 												return (new Symbol(sym.READLN));}
 <YYINITIAL> return                          {
-												System.out.println("r [shift]\n e [shift]\n t [shift]\n u [shift]\n r [shift]\n n [shift]");
+												System.out.print("\n" + RETURN + " [shift]");
 												return (new Symbol(sym.RETURN));}
 <YYINITIAL> string                          {
-												System.out.println("s [shift]\n t [shift]\n r [shift]\n i [shift]\n n [shift]\n g [shift]");
+												System.out.print("\n" + STRING + " [shift]");
 												return (new Symbol(sym.STRING));}
 <YYINITIAL> this                            {
-												System.out.println("t [shift]\n h [shift]\n i [shift]\n s [shift]");
+												System.out.print("\n" + THIS + " [shift]");
 												return (new Symbol(sym.THIS));}
 <YYINITIAL> true                            {
-												System.out.println("t [shift]\n r [shift]\n u [shift]\n e [shift]");
+												System.out.print("\n" + TRUE + " [shift]");
 												return (new Symbol(sym.TRUE));}
 <YYINITIAL> void                            {
-												System.out.println("v [shift]\n o [shift]\n i [shift]\n d [shift]");
+												System.out.print("\n" + VOID + " [shift]");
 												return (new Symbol(sym.VOID));}
 <YYINITIAL> while                           {
-												System.out.println("w [shift]\n h [shift]\n i [shift]\n l [shift]\n e [shift]");
+												System.out.print("\n" + WHILE + " [shift]");
 												return (new Symbol(sym.WHILE));}
 <YYINITIAL> \+                              {
-												System.out.println("+ [shift]");
+												System.out.print("\n" + PLUS + " [shift]");
 												return (new Symbol(sym.PLUS));}
 <YYINITIAL> -                               {
-												System.out.println("- [shift]");
+												System.out.print("\n" + MINUS + " [shift]");
 												return (new Symbol(sym.MINUS));}
 <YYINITIAL> \*                              {
-												System.out.println("* [shift]");
+												System.out.print("\n" + MUL + " [shift]");
 												return (new Symbol(sym.MUL));}
 <YYINITIAL> /                               {
-												System.out.println("/ [shift]");
+												System.out.print("\n" + DIV + " [shift]");
 												return (new Symbol(sym.DIV));}
 <YYINITIAL> %                               {
-												System.out.println("% [shift]");
+												System.out.print("\n" + MOD + " [shift]");
 												return (new Symbol(sym.MOD));}
 <YYINITIAL> <                               {
-												System.out.println("< [shift]");
+												System.out.print("\n" + LT + " [shift]");
 												return (new Symbol(sym.LT));}
 <YYINITIAL> <=                              {
-												System.out.println("< [shift]\n = [shift]");
+												System.out.print("\n" + LTEQ + " [shift]");
 												return (new Symbol(sym.LTEQ));}
 <YYINITIAL> >                               {
-												System.out.println("> [shift]");
+												System.out.print("\n" + GT + " [shift]");
 												return (new Symbol(sym.GT));}
 <YYINITIAL> >=                              {
-												System.out.println("> [shift]\n = [shift]");
+												System.out.print("\n" + GTEQ + " [shift]");
 												return (new Symbol(sym.GTEQ));}
 <YYINITIAL> ==                              {
-												System.out.println("= [shift]\n = [shift]");
+												System.out.print("\n" + COMP + " [shift]");
 												return (new Symbol(sym.COMP));}
 <YYINITIAL> !=                              {
-												System.out.println("! [shift]\n = [shift]");
+												System.out.print("\n" + DNE + " [shift]");
 												return (new Symbol(sym.DNE));}
 <YYINITIAL> &&                              {
-												System.out.println("& [shift]\n & [shift]");
+												System.out.print("\n" + AND +" [shift]");
 												return (new Symbol(sym.AND));}
 <YYINITIAL> "||"                            {
-												System.out.println("| [shift]\n | [shift]");
+												System.out.println("\n" + OR + " [shift]");
 												return (new Symbol(sym.OR));}
 <YYINITIAL> !                               {
-												System.out.println("! [shift]");
+												System.out.print("\n" + NOT + " [shift]");
 												return (new Symbol(sym.NOT));}
 <YYINITIAL> =                               {
-												System.out.println("= [shift]");
+												System.out.print("\n" + EQUAL + " [shift]");
 												return (new Symbol(sym.EQUAL));}
 <YYINITIAL> ;                               {
-												System.out.println("; [shift]");
+												System.out.print("\n" + SEMICOLON + " [shift]");
 												return (new Symbol(sym.SEMICOLON));}
 <YYINITIAL> ,                               {
-												System.out.println(", [shift]");
+												System.out.print("\n" + COMMA + " [shift]");
 												return (new Symbol(sym.COMMA));}
 <YYINITIAL> \.                              {
-												System.out.println(". [shift]");
+												System.out.print("\n" + PERIOD + " [shift]");
 												return (new Symbol(sym.PERIOD));}
 <YYINITIAL> \(                              {
-												System.out.println("( [shift]");
+												System.out.print("\n" + LPAREN + " [shift]");
 												return (new Symbol(sym.LPAREN));}
 <YYINITIAL> \)                              {
-												System.out.println(") [shift]");
+												System.out.print("\n" + RPAREN + " [shift]");
 												return (new Symbol(sym.RPAREN));}
 <YYINITIAL> \[                              {
-												System.out.println("[ [shift]");
+												System.out.print("\n" + LBRACKET +" [shift]");
 												return (new Symbol(sym.LBRACKET));}
 <YYINITIAL> \]                              {
-												System.out.println("] [shift]");
+												System.out.print("\n" + RBRACKET +" [shift]");
 												return (new Symbol(sym.RBRACKET));}
 <YYINITIAL> \{                              {
-												System.out.println("{ [shift]");
+												System.out.print("\n" + LBRACE + " [shift]");
 												return (new Symbol(sym.LBRACE));}
 <YYINITIAL> \}                              {
-												System.out.println("} [shift]");
+												System.out.print("\n" + RBRACE + " [shift]");
 												return (new Symbol(sym.RBRACE));}
 
-<YYINITIAL> {ALPHA}({ALPHA}|_|{DIGIT})* 	                {return (new Symbol(sym.ID));}
-<YYINITIAL> {DIGIT}+"."{DIGIT}*((E|e)("+"|"-")?{DIGIT}+)?   {return (new Symbol(sym.DOUBLECONST));}
-<YYINITIAL> {DIGIT}+ 						                {return (new Symbol(sym.INTCONST));}
-<YYINITIAL> (0x|0X){HEX}+ 					                {return (new Symbol(sym.INTCONST));}
-<YYINITIAL> \"({STRING_CHAR})*\"                            {String str =  yytext().substring(1,yytext().length() - 1);
-                                                            Utility.ASSERT(str.length() == yytext().length() - 2);
-                                                            return (new Symbol(sym.STRINGCONST));}
+<YYINITIAL> {ALPHA}({ALPHA}|_|{DIGIT})* 	                {
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
+<YYINITIAL> {DIGIT}+"."{DIGIT}*((E|e)("+"|"-")?{DIGIT}+)?   {
+                                                                System.out.print("\n" + DOUBLECONST + " [shift]");
+                                                                return (new Symbol(sym.DOUBLECONST));
+                                                            }
+<YYINITIAL> {DIGIT}+ 						                {
+                                                                System.out.print("\n" + INTCONST + " [shift]");
+                                                                return (new Symbol(sym.INTCONST));
+                                                            }
+<YYINITIAL> (0x|0X){HEX}+ 					                {
+                                                                System.out.print("\n" + INTCONST + " [shift]");
+                                                                return (new Symbol(sym.INTCONST));
+                                                            }
+<YYINITIAL> \"({STRING_CHAR})*\"                            {
+                                                                String str =  yytext().substring(1,yytext().length() - 1);
+                                                                Utility.ASSERT(str.length() == yytext().length() - 2);
+                                                                System.out.print("\n" + STRINGCONST + " [shift]");
+                                                                return (new Symbol(sym.STRINGCONST));
+                                                            }
 
 <YYINITIAL> {WHITE_SPACE_CHAR}				{;}
 <YYINITIAL> {NL}                            {System.out.println();}

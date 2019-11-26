@@ -885,83 +885,125 @@ class Yylex implements java_cup.runtime.Scanner {
 					case -2:
 						break;
 					case 2:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -3:
 						break;
 					case 3:
-						{return (new Symbol(sym.PLUS));}
+						{
+												System.out.print("\n" + PLUS + " [shift]");
+												return (new Symbol(sym.PLUS));}
 					case -4:
 						break;
 					case 4:
-						{return (new Symbol(sym.MINUS));}
+						{
+												System.out.print("\n" + MINUS + " [shift]");
+												return (new Symbol(sym.MINUS));}
 					case -5:
 						break;
 					case 5:
-						{return (new Symbol(sym.MUL));}
+						{
+												System.out.print("\n" + MUL + " [shift]");
+												return (new Symbol(sym.MUL));}
 					case -6:
 						break;
 					case 6:
-						{return (new Symbol(sym.DIV));}
+						{
+												System.out.print("\n" + DIV + " [shift]");
+												return (new Symbol(sym.DIV));}
 					case -7:
 						break;
 					case 7:
-						{return (new Symbol(sym.MOD));}
+						{
+												System.out.print("\n" + MOD + " [shift]");
+												return (new Symbol(sym.MOD));}
 					case -8:
 						break;
 					case 8:
-						{return (new Symbol(sym.LT));}
+						{
+												System.out.print("\n" + LT + " [shift]");
+												return (new Symbol(sym.LT));}
 					case -9:
 						break;
 					case 9:
-						{return (new Symbol(sym.EQUAL));}
+						{
+												System.out.print("\n" + EQUAL + " [shift]");
+												return (new Symbol(sym.EQUAL));}
 					case -10:
 						break;
 					case 10:
-						{return (new Symbol(sym.GT));}
+						{
+												System.out.print("\n" + GT + " [shift]");
+												return (new Symbol(sym.GT));}
 					case -11:
 						break;
 					case 11:
-						{return (new Symbol(sym.NOT));}
+						{
+												System.out.print("\n" + NOT + " [shift]");
+												return (new Symbol(sym.NOT));}
 					case -12:
 						break;
 					case 12:
-						{return (new Symbol(sym.SEMICOLON));}
+						{
+												System.out.print("\n" + SEMICOLON + " [shift]");
+												return (new Symbol(sym.SEMICOLON));}
 					case -13:
 						break;
 					case 13:
-						{return (new Symbol(sym.COMMA));}
+						{
+												System.out.print("\n" + COMMA + " [shift]");
+												return (new Symbol(sym.COMMA));}
 					case -14:
 						break;
 					case 14:
-						{return (new Symbol(sym.PERIOD));}
+						{
+												System.out.print("\n" + PERIOD + " [shift]");
+												return (new Symbol(sym.PERIOD));}
 					case -15:
 						break;
 					case 15:
-						{return (new Symbol(sym.LPAREN));}
+						{
+												System.out.print("\n" + LPAREN + " [shift]");
+												return (new Symbol(sym.LPAREN));}
 					case -16:
 						break;
 					case 16:
-						{return (new Symbol(sym.RPAREN));}
+						{
+												System.out.print("\n" + RPAREN + " [shift]");
+												return (new Symbol(sym.RPAREN));}
 					case -17:
 						break;
 					case 17:
-						{return (new Symbol(sym.LBRACKET));}
+						{
+												System.out.print("\n" + LBRACKET +" [shift]");
+												return (new Symbol(sym.LBRACKET));}
 					case -18:
 						break;
 					case 18:
-						{return (new Symbol(sym.RBRACKET));}
+						{
+												System.out.print("\n" + RBRACKET +" [shift]");
+												return (new Symbol(sym.RBRACKET));}
 					case -19:
 						break;
 					case 19:
-						{return (new Symbol(sym.LBRACE));}
+						{
+												System.out.print("\n" + LBRACE + " [shift]");
+												return (new Symbol(sym.LBRACE));}
 					case -20:
 						break;
 					case 20:
-						{return (new Symbol(sym.RBRACE));}
+						{
+												System.out.print("\n" + RBRACE + " [shift]");
+												return (new Symbol(sym.RBRACE));}
 					case -21:
 						break;
 					case 21:
-						{return (new Symbol(sym.INTCONST));}
+						{
+                                                                System.out.print("\n" + INTCONST + " [shift]");
+                                                                return (new Symbol(sym.INTCONST));
+                                                            }
 					case -22:
 						break;
 					case 22:
@@ -969,7 +1011,9 @@ class Yylex implements java_cup.runtime.Scanner {
 					case -23:
 						break;
 					case 23:
-						{return (new Symbol(sym.IF));}
+						{
+												System.out.print("\n" + IF + " [shift]");
+												return (new Symbol(sym.IF));}
 					case -24:
 						break;
 					case 24:
@@ -981,37 +1025,55 @@ class Yylex implements java_cup.runtime.Scanner {
 					case -26:
 						break;
 					case 26:
-						{return (new Symbol(sym.LTEQ));}
+						{
+												System.out.print("\n" + LTEQ + " [shift]");
+												return (new Symbol(sym.LTEQ));}
 					case -27:
 						break;
 					case 27:
-						{return (new Symbol(sym.COMP));}
+						{
+												System.out.print("\n" + COMP + " [shift]");
+												return (new Symbol(sym.COMP));}
 					case -28:
 						break;
 					case 28:
-						{return (new Symbol(sym.GTEQ));}
+						{
+												System.out.print("\n" + GTEQ + " [shift]");
+												return (new Symbol(sym.GTEQ));}
 					case -29:
 						break;
 					case 29:
-						{return (new Symbol(sym.DNE));}
+						{
+												System.out.print("\n" + DNE + " [shift]");
+												return (new Symbol(sym.DNE));}
 					case -30:
 						break;
 					case 30:
-						{return (new Symbol(sym.AND));}
+						{
+												System.out.print("\n" + AND +" [shift]");
+												return (new Symbol(sym.AND));}
 					case -31:
 						break;
 					case 31:
-						{return (new Symbol(sym.OR));}
+						{
+												System.out.println("\n" + OR + " [shift]");
+												return (new Symbol(sym.OR));}
 					case -32:
 						break;
 					case 32:
-						{return (new Symbol(sym.DOUBLECONST));}
+						{
+                                                                System.out.print("\n" + DOUBLECONST + " [shift]");
+                                                                return (new Symbol(sym.DOUBLECONST));
+                                                            }
 					case -33:
 						break;
 					case 33:
-						{String str =  yytext().substring(1,yytext().length() - 1);
-                                                            Utility.ASSERT(str.length() == yytext().length() - 2);
-                                                            return (new Symbol(sym.STRINGCONST));}
+						{
+                                                                String str =  yytext().substring(1,yytext().length() - 1);
+                                                                Utility.ASSERT(str.length() == yytext().length() - 2);
+                                                                System.out.print("\n" + STRINGCONST + " [shift]");
+                                                                return (new Symbol(sym.STRINGCONST));
+                                                            }
 					case -34:
 						break;
 					case 34:
@@ -1019,91 +1081,140 @@ class Yylex implements java_cup.runtime.Scanner {
 					case -35:
 						break;
 					case 35:
-						{return (new Symbol(sym.NEW));}
+						{
+												System.out.print("\n" + NEW + " [shift]");
+												return (new Symbol(sym.NEW));}
 					case -36:
 						break;
 					case 36:
-						{return (new Symbol(sym.FOR));}
+						{	
+												System.out.print("\n" + FOR + " [shift]");
+												return (new Symbol(sym.FOR));}
 					case -37:
 						break;
 					case 37:
-						{return (new Symbol(sym.INT));}
+						{
+												System.out.print("\n" + INT + " [shift]");
+												return (new Symbol(sym.INT));}
 					case -38:
 						break;
 					case 38:
-						{return (new Symbol(sym.INTCONST));}
+						{
+                                                                System.out.print("\n" + INTCONST + " [shift]");
+                                                                return (new Symbol(sym.INTCONST));
+                                                            }
 					case -39:
 						break;
 					case 39:
-						{return (new Symbol(sym.ELSE));}
+						{
+												System.out.print("\n" + ELSE + " [shift]");
+												return (new Symbol(sym.ELSE));}
 					case -40:
 						break;
 					case 40:
-						{return (new Symbol(sym.TRUE));}
+						{
+												System.out.print("\n" + TRUE + " [shift]");
+												return (new Symbol(sym.TRUE));}
 					case -41:
 						break;
 					case 41:
-						{return (new Symbol(sym.THIS));}
+						{
+												System.out.print("\n" + THIS + " [shift]");
+												return (new Symbol(sym.THIS));}
 					case -42:
 						break;
 					case 42:
-						{return (new Symbol(sym.VOID));}
+						{
+												System.out.print("\n" + VOID + " [shift]");
+												return (new Symbol(sym.VOID));}
 					case -43:
 						break;
 					case 43:
-						{return (new Symbol(sym.BREAK));}
+						{
+                                                System.out.print("\n" + BREAK + " [shift]");
+                                                return (new Symbol(sym.BREAK));
+                                            }
 					case -44:
 						break;
 					case 44:
-						{return (new Symbol(sym.CLASS));}
+						{	
+												System.out.print("\n" + CLASS +" [shift]");	
+												return (new Symbol(sym.CLASS));
+											}
 					case -45:
 						break;
 					case 45:
-						{return (new Symbol(sym.FALSE));}
+						{
+												System.out.print("\n" + FALSE + " [shift]");
+												return (new Symbol(sym.FALSE));
+											}
 					case -46:
 						break;
 					case 46:
-						{return (new Symbol(sym.WHILE));}
+						{
+												System.out.print("\n" + WHILE + " [shift]");
+												return (new Symbol(sym.WHILE));}
 					case -47:
 						break;
 					case 47:
-						{return (new Symbol(sym.READLN));}
+						{
+												System.out.print("\n" + READLN + " [shift]");
+												return (new Symbol(sym.READLN));}
 					case -48:
 						break;
 					case 48:
-						{return (new Symbol(sym.RETURN));}
+						{
+												System.out.print("\n" + RETURN + " [shift]");
+												return (new Symbol(sym.RETURN));}
 					case -49:
 						break;
 					case 49:
-						{return (new Symbol(sym.STRING));}
+						{
+												System.out.print("\n" + STRING + " [shift]");
+												return (new Symbol(sym.STRING));}
 					case -50:
 						break;
 					case 50:
-						{return (new Symbol(sym.DOUBLE));}
+						{
+												System.out.print("\n" + DOUBLE + " [shift]");
+												return (new Symbol(sym.DOUBLE));}
 					case -51:
 						break;
 					case 51:
-						{return (new Symbol(sym.BOOL));}
+						{
+                                                System.out.print("\n" + BOOL + " [shift]");
+                                                return (new Symbol(sym.BOOL));
+                                            }
 					case -52:
 						break;
 					case 52:
-						{return (new Symbol(sym.EXTENDS));}
+						{
+												System.out.print("\n" + EXTENDS + " [shift]");
+												return (new Symbol(sym.EXTENDS));}
 					case -53:
 						break;
 					case 53:
-						{return (new Symbol(sym.PRINTLN));}
+						{
+												System.out.print("\n" + PRINTLN + " [shift]");
+												return (new Symbol(sym.PRINTLN));}
 					case -54:
 						break;
 					case 54:
-						{return (new Symbol(sym.NEWARR));}
+						{
+												System.out.print("\n" + NEWARR + " [shift]");
+												return (new Symbol(sym.NEWARR));}
 					case -55:
 						break;
 					case 55:
-						{return (new Symbol(sym.INTERFACE));}
+						{
+												System.out.print("\n" + INTERFACE + " [shift]");					
+												return (new Symbol(sym.INTERFACE));}
 					case -56:
 						break;
 					case 56:
-						{return (new Symbol(sym.IMPLEMENTS));}
+						{
+												System.out.print("\n" + IMPLEMENTS + " [shift]");
+												return (new Symbol(sym.IMPLEMENTS));}
 					case -57:
 						break;
 					case 57:
@@ -1123,21 +1234,33 @@ class Yylex implements java_cup.runtime.Scanner {
 					case -61:
 						break;
 					case 62:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -62:
 						break;
 					case 63:
-						{return (new Symbol(sym.INTCONST));}
+						{
+                                                                System.out.print("\n" + INTCONST + " [shift]");
+                                                                return (new Symbol(sym.INTCONST));
+                                                            }
 					case -63:
 						break;
 					case 64:
-						{return (new Symbol(sym.DOUBLECONST));}
+						{
+                                                                System.out.print("\n" + DOUBLECONST + " [shift]");
+                                                                return (new Symbol(sym.DOUBLECONST));
+                                                            }
 					case -64:
 						break;
 					case 65:
-						{String str =  yytext().substring(1,yytext().length() - 1);
-                                                            Utility.ASSERT(str.length() == yytext().length() - 2);
-                                                            return (new Symbol(sym.STRINGCONST));}
+						{
+                                                                String str =  yytext().substring(1,yytext().length() - 1);
+                                                                Utility.ASSERT(str.length() == yytext().length() - 2);
+                                                                System.out.print("\n" + STRINGCONST + " [shift]");
+                                                                return (new Symbol(sym.STRINGCONST));
+                                                            }
 					case -65:
 						break;
 					case 66:
@@ -1149,335 +1272,584 @@ class Yylex implements java_cup.runtime.Scanner {
 					case -67:
 						break;
 					case 69:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -68:
 						break;
 					case 71:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -69:
 						break;
 					case 73:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -70:
 						break;
 					case 75:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -71:
 						break;
 					case 77:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -72:
 						break;
 					case 79:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -73:
 						break;
 					case 81:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -74:
 						break;
 					case 83:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -75:
 						break;
 					case 85:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -76:
 						break;
 					case 87:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -77:
 						break;
 					case 88:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -78:
 						break;
 					case 89:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -79:
 						break;
 					case 90:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -80:
 						break;
 					case 91:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -81:
 						break;
 					case 92:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -82:
 						break;
 					case 93:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -83:
 						break;
 					case 94:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -84:
 						break;
 					case 95:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -85:
 						break;
 					case 96:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -86:
 						break;
 					case 97:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -87:
 						break;
 					case 98:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -88:
 						break;
 					case 99:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -89:
 						break;
 					case 100:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -90:
 						break;
 					case 101:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -91:
 						break;
 					case 102:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -92:
 						break;
 					case 103:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -93:
 						break;
 					case 104:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -94:
 						break;
 					case 105:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -95:
 						break;
 					case 106:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -96:
 						break;
 					case 107:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -97:
 						break;
 					case 108:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -98:
 						break;
 					case 109:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -99:
 						break;
 					case 110:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -100:
 						break;
 					case 111:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -101:
 						break;
 					case 112:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -102:
 						break;
 					case 113:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -103:
 						break;
 					case 114:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -104:
 						break;
 					case 115:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -105:
 						break;
 					case 116:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -106:
 						break;
 					case 117:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -107:
 						break;
 					case 118:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -108:
 						break;
 					case 119:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -109:
 						break;
 					case 120:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -110:
 						break;
 					case 121:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -111:
 						break;
 					case 122:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -112:
 						break;
 					case 123:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -113:
 						break;
 					case 124:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -114:
 						break;
 					case 125:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -115:
 						break;
 					case 126:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -116:
 						break;
 					case 127:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -117:
 						break;
 					case 128:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -118:
 						break;
 					case 129:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -119:
 						break;
 					case 130:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -120:
 						break;
 					case 131:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -121:
 						break;
 					case 132:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -122:
 						break;
 					case 133:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -123:
 						break;
 					case 134:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -124:
 						break;
 					case 135:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -125:
 						break;
 					case 136:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -126:
 						break;
 					case 137:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -127:
 						break;
 					case 138:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -128:
 						break;
 					case 139:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -129:
 						break;
 					case 140:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -130:
 						break;
 					case 141:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -131:
 						break;
 					case 142:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -132:
 						break;
 					case 143:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -133:
 						break;
 					case 144:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -134:
 						break;
 					case 145:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -135:
 						break;
 					case 146:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -136:
 						break;
 					case 147:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -137:
 						break;
 					case 148:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -138:
 						break;
 					case 149:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -139:
 						break;
 					case 150:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -140:
 						break;
 					case 151:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -141:
 						break;
 					case 152:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -142:
 						break;
 					case 153:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -143:
 						break;
 					case 154:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -144:
 						break;
 					case 155:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -145:
 						break;
 					case 156:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -146:
 						break;
 					case 157:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -147:
 						break;
 					case 158:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -148:
 						break;
 					case 159:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -149:
 						break;
 					case 160:
-						{return (new Symbol(sym.ID));}
+						{
+                                                                System.out.print("\n" + ID + " [shift]");
+                                                                return (new Symbol(sym.ID));
+                                                            }
 					case -150:
 						break;
 					default:

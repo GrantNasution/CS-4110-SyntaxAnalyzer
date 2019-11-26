@@ -1,2 +1,3 @@
-// in function
-result =  5.times(4);
+int poop() {
+	result = 5.times(4);
+}
